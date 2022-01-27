@@ -2,35 +2,46 @@
 
 ## Features
 
-- Uses Yarn
-- Webpack
+- Support of React library
+- React Refresh (**Dev mode**)
+- Styling with SASS/SCSS preprocessor
+- PostCSS preprocessor
+  - Autoprefixer
 - Babel transpiller
-- React
-- SASS(SCSS) preprocessor
-- PostCSS
-- Images optimization
+- Source-maps for CSS and JS files (**Dev mode**)
+- Minification of HTML/CSS/JS files (**Prod mode**)
+- Optimization of images with Squoosh (**Prod mode**)
+- SVG sprites
+- ESlint and Stylelint
+- Prettify
 
 ## Scripts
 
-To start development mode:
+To install dependencies:
+
+```sh
+yarn install
+```
+
+Start development mode:
 
 ```sh
 yarn run start
 ```
 
-To a create production build:
+Create production build:
 
 ```sh
 yarn run build
 ```
 
-To lint code:
+Lint code:
 
 ```sh
 yarn run lint
 ```
 
-To prettify code:
+Prettify code:
 
 ```sh
 yarn run prettify
