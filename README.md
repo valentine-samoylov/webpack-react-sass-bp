@@ -13,7 +13,7 @@
 - Optimization of images with Squoosh (**Prod mode**)
 - SVG sprites
 - ESlint and Stylelint
-- Prettify
+- Prettier
 
 ## Scripts
 
