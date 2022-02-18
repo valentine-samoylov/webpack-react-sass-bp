@@ -1,8 +1,9 @@
-import React from 'react'
+// Nav
+import { useState } from 'react'
 import './Nav.scss'
 
 const Nav = () => {
-  const [isOpen, setIsOpen] = React.useState(false)
+  const [isOpen, setIsOpen] = useState(false)
   const toggle = () => setIsOpen(!isOpen)
   const hide = () => setIsOpen(false)
   const show = () => setIsOpen(true)
