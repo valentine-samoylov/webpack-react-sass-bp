@@ -1,4 +1,5 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const TerserPlugin = require('terser-webpack-plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin')
 const { merge } = require('webpack-merge')
@@ -44,6 +45,14 @@ module.exports = merge(common, {
   optimization: {
     minimize: true,
     minimizer: [
+      new TerserPlugin({
+        terserOptions: {
+          format: {
+            comments: false,
+          },
+        },
+        extractComments: false,
+      }),
       new CssMinimizerPlugin(),
       new ImageMinimizerPlugin({
         minimizer: {
@@ -63,6 +72,32 @@ module.exports = merge(common, {
             },
           },
         },
+        generator: [
+          {
+            // You can apply generator using `?as=webp`, you can use any name and provide more options
+            preset: 'webp',
+            implementation: ImageMinimizerPlugin.squooshGenerate,
+            options: {
+              encodeOptions: {
+                webp: {
+                  quality: 90,
+                },
+              },
+            },
+          },
+          {
+            // You can apply generator using `?as=avif`, you can use any name and provide more options
+            preset: 'avif',
+            implementation: ImageMinimizerPlugin.squooshGenerate,
+            options: {
+              encodeOptions: {
+                avif: {
+                  cqLevel: 33,
+                },
+              },
+            },
+          },
+        ],
       }),
     ],
     runtimeChunk: 'single',

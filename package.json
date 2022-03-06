@@ -5,7 +5,6 @@
     "name": "valentine Samoylov",
     "email": "valentine.samoylov@gmail.com"
   },
-  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/valentine-samoylov/webpack-react-sass-bp.git"
@@ -14,7 +13,9 @@
     "url": "https://github.com/valentine-samoylov/webpack-react-sass-bp/issues"
   },
   "homepage": "https://github.com/valentine-samoylov/webpack-react-sass-bp#readme",
+  "version": "2.0.0",
   "packageManager": "yarn@3.1.1",
+  "license": "MIT",
   "main": "index.js",
   "scripts": {
     "clean": "rm dist -rf",
@@ -40,6 +41,7 @@
     "@babel/preset-react": "^7.16.0",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.4",
     "@squoosh/lib": "^0.4.0",
+    "@svgr/webpack": "^6.2.1",
     "babel-loader": "^8.2.3",
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^9.0.1",
@@ -65,12 +67,7 @@
     "sass": "^1.49.8",
     "sass-loader": "^12.3.0",
     "style-loader": "^3.3.1",
-    "stylelint": "^14.2.0",
-    "stylelint-config-airbnb": "^0.0.0",
-    "stylelint-config-standard-scss": "^3.0.0",
-    "stylelint-order": "^5.0.0",
-    "svg-sprite-loader": "^6.0.11",
-    "svgo-loader": "^3.0.0",
+    "terser-webpack-plugin": "^5.3.1",
     "webpack": "^5.67.0",
     "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^4.7.3",

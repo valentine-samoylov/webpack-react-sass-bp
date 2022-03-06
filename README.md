@@ -11,7 +11,8 @@
 - Source-maps for CSS and JS files (**Dev mode**)
 - Minification of HTML/CSS/JS files (**Prod mode**)
 - Optimization of images with Squoosh (**Prod mode**)
-- SVG sprites
+  - Images can be converted to WEBP format (**Prod mode**)
+- SVGR converts SVG into React components and inserts them as inline SVG into HTML.
 - ESlint and Stylelint
 - Prettier
 

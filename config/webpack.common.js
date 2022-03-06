@@ -17,12 +17,17 @@ module.exports = {
   module: {
     rules: [
       { test: /\.(js|jsx)$/, exclude: /node_modules/, use: ['babel-loader'] },
-      { test: /\.(jpe?g|png|gif|webp|avif)$/i, type: 'asset/resource' },
-      { test: /\.(woff(2)?|eot|ttf|otf)$/, type: 'asset/inline' },
       {
-        test: /\.svg$/,
-        use: ['svg-sprite-loader', 'svgo-loader'],
+        test: /\.(jpe?g|png|gif|webp|avif)$/i,
+        type: 'asset/resource',
       },
+      { test: /\.img.svg$/i, type: 'asset/resource' },
+      {
+        test: /\.svg$/i,
+        issuer: /\.[jt]sx?$/,
+        use: ['@svgr/webpack'],
+      },
+      { test: /\.(woff(2)?|eot|ttf|otf)$/, type: 'asset/resource' },
       { test: /\.txt$/, type: 'asset/source' },
     ],
   },
@@ -60,6 +65,8 @@ module.exports = {
       '@components': `${paths.src}/components`,
       '@context': `${paths.src}/context`,
       '@hooks': `${paths.src}/hooks`,
+      '@pages': `${paths.src}/pages`,
+      '@utils': `${paths.src}/utils`,
       assets: paths.public,
     },
   },
